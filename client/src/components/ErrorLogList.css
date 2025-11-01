@@ -1,0 +1,201 @@
+.error-log-list {
+  margin-top: 30px;
+}
+
+.error-log-list h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.logs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.error-log-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s;
+}
+
+.error-log-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.log-severity-service {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.severity-badge {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-critical {
+  background-color: #dc3545;
+  color: white;
+}
+
+.badge-high {
+  background-color: #fd7e14;
+  color: white;
+}
+
+.badge-medium {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.badge-low {
+  background-color: #28a745;
+  color: white;
+}
+
+.service-name {
+  font-weight: 600;
+  color: #007bff;
+  font-size: 1rem;
+}
+
+.error-type {
+  background: #e9ecef;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.log-time {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.log-message {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.log-url {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  font-family: monospace;
+}
+
+.log-stacktrace,
+.log-metadata {
+  margin-top: 15px;
+}
+
+.log-stacktrace summary,
+.log-metadata summary {
+  cursor: pointer;
+  color: #007bff;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.log-stacktrace pre,
+.log-metadata pre {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  border-left: 3px solid #007bff;
+}
+
+.log-tracking {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.tracking-item {
+  color: #666;
+  font-family: monospace;
+}
+
+.tracking-item strong {
+  color: #333;
+  margin-right: 5px;
+}
+
+.log-footer {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e9ecef;
+}
+
+.external-api-badge,
+.console-badge,
+.email-sent-badge,
+.archived-badge {
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.external-api-badge {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.console-badge {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.email-sent-badge {
+  background: #d4edda;
+  color: #155724;
+}
+
+.archived-badge {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.no-logs {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+  background: white;
+  border-radius: 8px;
+  border: 2px dashed #ddd;
+}
+
+.no-logs p {
+  font-size: 1.1rem;
+  margin: 0;
+}

@@ -1,0 +1,178 @@
+### GlitchGuard API Test Requests
+### Use this file with REST Client extension in VS Code or any HTTP client
+
+@baseUrl = http://localhost:5000/api
+@contentType = application/json
+
+### Health Check
+GET http://localhost:5000/health
+
+### Get All Error Logs
+GET {{baseUrl}}/logs
+
+### Get Error Logs with Filters
+GET {{baseUrl}}/logs?severity=critical&service=payment-service&page=1&limit=10
+
+### Get Error Logs by Date Range
+GET {{baseUrl}}/logs?startDate=2024-01-01&endDate=2024-12-31
+
+### Get Error Statistics
+GET {{baseUrl}}/logs/stats
+
+### Log a Critical Server Error
+POST {{baseUrl}}/logs
+Content-Type: {{contentType}}
+
+{
+  "severity": "critical",
+  "service": "payment-service",
+  "errorType": "server",
+  "message": "Payment gateway timeout - connection failed",
+  "stackTrace": "Error: Request timeout\n    at PaymentService.process (/app/services/payment.js:45:12)\n    at async PaymentController.handlePayment (/app/controllers/payment.js:23:8)",
+  "url": "/api/payments/process",
+  "metadata": {
+    "orderId": "ORD-12345",
+    "amount": 299.99,
+    "customerId": "cust-789"
+  }
+}
+
+### Log a High Severity Database Error
+POST {{baseUrl}}/logs
+Content-Type: {{contentType}}
+
+{
+  "severity": "high",
+  "service": "user-service",
+  "errorType": "database",
+  "message": "Database connection pool exhausted",
+  "stackTrace": "Error: Too many connections\n    at Pool.getConnection (/app/db/pool.js:89:10)",
+  "url": "/api/users/profile",
+  "metadata": {
+    "userId": "user-123",
+    "query": "SELECT * FROM users WHERE id = ?"
+  }
+}
+
+### Log a Browser Error
+POST {{baseUrl}}/logs
+Content-Type: {{contentType}}
+
+{
+  "severity": "medium",
+  "service": "frontend-app",
+  "errorType": "browser",
+  "message": "Uncaught TypeError: Cannot read property 'map' of undefined",
+  "stackTrace": "TypeError: Cannot read property 'map' of undefined\n    at ProductList.render (ProductList.jsx:23:8)\n    at ReactDOM.render",
+  "url": "/products",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+  "metadata": {
+    "component": "ProductList",
+    "page": "/products",
+    "browser": "Chrome"
+  }
+}
+
+### Log Repeated Error (Should Trigger Email)
+POST {{baseUrl}}/logs
+Content-Type: {{contentType}}
+
+{
+  "severity": "high",
+  "service": "notification-service",
+  "errorType": "server",
+  "message": "Email service unavailable - SMTP connection refused",
+  "stackTrace": "Error: SMTP server connection refused\n    at EmailService.send (/app/services/email.js:34:9)",
+  "url": "/api/notifications/send",
+  "metadata": {
+    "recipient": "user@example.com",
+    "type": "welcome"
+  }
+}
+
+### Get All Retention Rules
+GET {{baseUrl}}/rules
+
+### Create a Retention Rule
+POST {{baseUrl}}/rules
+Content-Type: {{contentType}}
+
+{
+  "name": "Archive Low Severity Errors",
+  "description": "Automatically archive low severity errors after 30 days",
+  "conditions": {
+    "severity": ["low"],
+    "service": [],
+    "errorType": []
+  },
+  "retentionDuration": 30,
+  "retentionUnit": "days",
+  "autoArchive": true
+}
+
+### Create Another Retention Rule
+POST {{baseUrl}}/rules
+Content-Type: {{contentType}}
+
+{
+  "name": "Archive Critical Errors in 10 Minutes",
+  "description": "Demo rule for quick archival",
+  "conditions": {
+    "severity": ["critical"],
+    "service": [],
+    "errorType": []
+  },
+  "retentionDuration": 10,
+  "retentionUnit": "minutes",
+  "autoArchive": true
+}
+
+### Update a Retention Rule
+PUT {{baseUrl}}/rules/:id
+Content-Type: {{contentType}}
+
+{
+  "name": "Archive Low Severity Errors (Updated)",
+  "description": "Updated description",
+  "retentionDuration": 45,
+  "retentionUnit": "days",
+  "autoArchive": true
+}
+
+### Toggle Auto-Archive for a Rule
+PATCH {{baseUrl}}/rules/:id/archive-toggle
+Content-Type: {{contentType}}
+
+{
+  "autoArchive": false
+}
+
+### Delete a Retention Rule
+DELETE {{baseUrl}}/rules/:id
+
+### List External Services
+GET {{baseUrl}}/external/services
+
+### Fetch Errors from All External Services
+GET {{baseUrl}}/external/errors?count=5
+
+### Fetch Errors from a Specific Service
+GET {{baseUrl}}/external/payment-service/errors?count=3
+
+### Trigger External Service Error Report
+POST {{baseUrl}}/external/payment-service/report
+
+### Get External Service Stats
+GET {{baseUrl}}/external/stats
+
+### Monitoring Status
+GET {{baseUrl}}/monitoring/status
+
+### Start Monitoring
+POST {{baseUrl}}/monitoring/start
+
+### Stop Monitoring
+POST {{baseUrl}}/monitoring/stop
+
+### Trigger Monitoring Cycle Manually
+POST {{baseUrl}}/monitoring/trigger

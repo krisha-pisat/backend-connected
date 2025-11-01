@@ -1,23 +1,48 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import ErrorDashboard from './components/ErrorDashboard';
+import AuditDashboard from './components/AuditDashboard';
+import RetentionRulesDashboard from './components/RetentionRulesDashboard';
+import ArchiveDashboard from './components/ArchiveDashboard';
 import './App.css';
 
 function App() {
+  const [activeTab, setActiveTab] = useState('errors');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className="app-tabs">
+        <button
+          className={`tab-button ${activeTab === 'errors' ? 'active' : ''}`}
+          onClick={() => setActiveTab('errors')}
         >
-          Learn React
-        </a>
-      </header>
+          🛡️ Error Management
+        </button>
+        <button
+          className={`tab-button ${activeTab === 'archive' ? 'active' : ''}`}
+          onClick={() => setActiveTab('archive')}
+        >
+          📦 Archive
+        </button>
+        <button
+          className={`tab-button ${activeTab === 'audit' ? 'active' : ''}`}
+          onClick={() => setActiveTab('audit')}
+        >
+          📊 Audit Logs
+        </button>
+        <button
+          className={`tab-button ${activeTab === 'rules' ? 'active' : ''}`}
+          onClick={() => setActiveTab('rules')}
+        >
+          🗂️ Retention Rules
+        </button>
+      </div>
+
+      <div className="app-content">
+        {activeTab === 'errors' && <ErrorDashboard />}
+        {activeTab === 'archive' && <ArchiveDashboard />}
+        {activeTab === 'audit' && <AuditDashboard />}
+        {activeTab === 'rules' && <RetentionRulesDashboard />}
+      </div>
     </div>
   );
 }

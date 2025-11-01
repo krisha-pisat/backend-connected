@@ -1,0 +1,142 @@
+.monitoring-controls {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.monitoring-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.running {
+  background-color: #28a745;
+  box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+  animation: pulse 2s infinite;
+}
+
+.status-dot.stopped {
+  background-color: #dc3545;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.status-text {
+  font-weight: 600;
+  color: #333;
+}
+
+.status-details {
+  display: flex;
+  gap: 15px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.monitoring-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.btn-start,
+.btn-stop,
+.btn-trigger {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-start {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-start:hover:not(:disabled) {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+.btn-stop {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-stop:hover:not(:disabled) {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
+.btn-trigger {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-trigger:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.btn-start:disabled,
+.btn-stop:disabled,
+.btn-trigger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.monitored-services {
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.monitored-services strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.service-tag {
+  background: #e9ecef;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: #495057;
+}
+
+.monitoring-loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
