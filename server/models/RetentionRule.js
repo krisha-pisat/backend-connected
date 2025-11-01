@@ -12,14 +12,17 @@ const retentionRuleSchema = new mongoose.Schema({
   conditions: {
     severity: {
       type: [String],
-      enum: ['low', 'medium', 'high', 'critical']
+      enum: ['low', 'medium', 'high', 'critical'],
+      default: []
     },
     service: {
-      type: [String]
+      type: [String],
+      default: []
     },
     errorType: {
       type: [String],
-      enum: ['browser', 'server', 'database']
+      enum: ['browser', 'server', 'database'],
+      default: []
     }
   },
   retentionDays: {
@@ -28,10 +31,7 @@ const retentionRuleSchema = new mongoose.Schema({
   },
   retentionDuration: {
     type: Number,
-    min: 0,
-    default: function () {
-      return this.retentionDays || 0;
-    }
+    min: 0
   },
   retentionUnit: {
     type: String,

@@ -1988,3 +1988,310 @@
 {"level":"info","message":"\u001b[0mGET /api/rules \u001b[36m304\u001b[0m 8.869 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:01:27"}
 {"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:02:00"}
 {"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:02:00"}
+{"level":"info","message":"🚀 GlitchGuard Server running on port 5000","service":"glitchguard-api","timestamp":"2025-11-01 17:23:00"}
+{"level":"info","message":"📊 Health check: http://localhost:5000/health","service":"glitchguard-api","timestamp":"2025-11-01 17:23:00"}
+{"level":"info","message":"📝 API Base: http://localhost:5000/api","service":"glitchguard-api","timestamp":"2025-11-01 17:23:00"}
+{"level":"info","message":"🔄 Starting automatic error monitoring...","service":"glitchguard-api","timestamp":"2025-11-01 17:23:00"}
+{"level":"info","message":"✅ Connected to MongoDB","service":"glitchguard-api","timestamp":"2025-11-01 17:23:00"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:24:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:24:00"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:25:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:25:00"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[32m200\u001b[0m 1.751 ms - 189\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:07"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.859 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:07"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 45.351 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:07"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 28.146 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:07"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 22.068 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:07"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[32m200\u001b[0m 105.875 ms - 290\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:07"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 8.785 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:07"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 24.184 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:08"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.843 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:12"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 26.753 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:12"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.480 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:17"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 42.280 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:17"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.609 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:22"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 28.873 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:22"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.505 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:27"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 36.172 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:27"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.247 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:32"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 23.289 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:32"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.410 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:37"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 25.814 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:37"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.511 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:42"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 58.837 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:42"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.292 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:47"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 19.878 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:47"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.422 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:52"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 23.338 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:52"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.674 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:57"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 27.523 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:25:57"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:26:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:26:00"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.440 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:02"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 109.282 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:02"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.589 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:07"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 32.518 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:07"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.426 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:12"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 27.617 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:12"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.257 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:17"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 23.639 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:17"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.389 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:22"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 20.509 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:22"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.233 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:28"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 30.475 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:28"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.307 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:33"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 51.705 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:33"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.450 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:38"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 22.876 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:38"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.506 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:43"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 30.006 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:43"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.176 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:48"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 26.638 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:48"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.406 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:53"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 20.253 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:53"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.434 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:58"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 29.491 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:26:58"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:27:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:27:00"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.481 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:27:03"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 45.855 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:27:03"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.473 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:27:08"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 31.953 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:27:08"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.184 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:27:13"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 135.888 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:27:13"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.463 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:27:18"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 25.829 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:27:18"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.444 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:27:23"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 22.440 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:27:23"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.459 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:27:43"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 22.194 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:27:43"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:28:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:28:00"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.188 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:28:43"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 29.231 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:28:43"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:29:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:29:00"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.183 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:29:43"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 26.041 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:29:43"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:30:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:30:00"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.604 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:30:43"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 33.810 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:30:43"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:31:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:31:00"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.220 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:31:33"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 24.043 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:31:33"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.211 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:31:37"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 26.546 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:31:37"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.311 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:31:42"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 27.633 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:31:42"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.484 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:31:47"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 69.298 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:31:47"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.405 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:31:52"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 19.298 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:31:52"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:32:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:32:00"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.192 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:32:31"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.161 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:32:31"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 15.936 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:32:31"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 7.820 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:32:31"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 33.652 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:32:31"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 32.215 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:32:31"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 48.916 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:32:31"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 21.368 ms - 15536\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:32:31"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.193 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:32:36"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 21.406 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:32:36"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[32m200\u001b[0m 9.838 ms - 420\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:32:37"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[36m304\u001b[0m 6.987 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:32:37"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:33:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:33:00"}
+{"level":"info","message":"\u001b[0mPOST /api/rules \u001b[31m500\u001b[0m 18.222 ms - 176\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:33:03"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:34:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:34:00"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:35:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:35:00"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:36:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:36:00"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:37:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:37:00"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:38:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:38:00"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:39:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:39:00"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:40:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:40:00"}
+{"level":"info","message":"🚀 GlitchGuard Server running on port 5000","service":"glitchguard-api","timestamp":"2025-11-01 17:40:19"}
+{"level":"info","message":"📊 Health check: http://localhost:5000/health","service":"glitchguard-api","timestamp":"2025-11-01 17:40:19"}
+{"level":"info","message":"📝 API Base: http://localhost:5000/api","service":"glitchguard-api","timestamp":"2025-11-01 17:40:19"}
+{"level":"info","message":"🔄 Starting automatic error monitoring...","service":"glitchguard-api","timestamp":"2025-11-01 17:40:19"}
+{"level":"info","message":"✅ Connected to MongoDB","service":"glitchguard-api","timestamp":"2025-11-01 17:40:19"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 3.366 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:40:28"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.626 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:40:28"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[32m200\u001b[0m 29.735 ms - 290\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:40:28"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 57.861 ms - 15664\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:40:28"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 19.904 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:40:28"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 39.152 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:40:28"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 29.723 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:40:28"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 38.115 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:40:28"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[32m200\u001b[0m 14.081 ms - 420\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:40:29"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[36m304\u001b[0m 10.361 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:40:29"}
+{"level":"info","message":"\u001b[0mPOST /api/rules \u001b[31m500\u001b[0m 23.938 ms - 176\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:40:44"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:41:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:41:00"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:42:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:42:00"}
+{"level":"info","message":"🚀 GlitchGuard Server running on port 5000","service":"glitchguard-api","timestamp":"2025-11-01 17:43:00"}
+{"level":"info","message":"📊 Health check: http://localhost:5000/health","service":"glitchguard-api","timestamp":"2025-11-01 17:43:00"}
+{"level":"info","message":"📝 API Base: http://localhost:5000/api","service":"glitchguard-api","timestamp":"2025-11-01 17:43:00"}
+{"level":"info","message":"🔄 Starting automatic error monitoring...","service":"glitchguard-api","timestamp":"2025-11-01 17:43:00"}
+{"level":"info","message":"✅ Connected to MongoDB","service":"glitchguard-api","timestamp":"2025-11-01 17:43:00"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 3.128 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:43:04"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.793 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:43:04"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 44.648 ms - 15404\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:43:04"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 34.944 ms - 15404\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:43:04"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[32m200\u001b[0m 116.207 ms - 290\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:43:04"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 32.953 ms - 15404\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:43:04"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 10.197 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:43:04"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 37.277 ms - 15404\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:43:04"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.583 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:43:09"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 67.562 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:43:09"}
+{"level":"info","message":"\u001b[0mGET /api/logs?page=1&limit=20&isArchived=true \u001b[32m200\u001b[0m 42.475 ms - 15336\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:43:11"}
+{"level":"info","message":"\u001b[0mGET /api/logs?page=1&limit=20&isArchived=true \u001b[36m304\u001b[0m 33.759 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:43:11"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[32m200\u001b[0m 9.707 ms - 420\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:43:11"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[36m304\u001b[0m 13.363 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:43:11"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:44:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:44:00"}
+{"level":"info","message":"\u001b[0mPOST /api/rules \u001b[31m500\u001b[0m 18.225 ms - 176\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:44:06"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:45:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:45:00"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:46:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:46:00"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:47:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:47:00"}
+{"level":"info","message":"🚀 GlitchGuard Server running on port 5000","service":"glitchguard-api","timestamp":"2025-11-01 17:47:19"}
+{"level":"info","message":"📊 Health check: http://localhost:5000/health","service":"glitchguard-api","timestamp":"2025-11-01 17:47:19"}
+{"level":"info","message":"📝 API Base: http://localhost:5000/api","service":"glitchguard-api","timestamp":"2025-11-01 17:47:19"}
+{"level":"info","message":"🔄 Starting automatic error monitoring...","service":"glitchguard-api","timestamp":"2025-11-01 17:47:19"}
+{"level":"info","message":"✅ Connected to MongoDB","service":"glitchguard-api","timestamp":"2025-11-01 17:47:19"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 3.807 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:47:22"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.698 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:47:22"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[32m200\u001b[0m 36.109 ms - 290\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:47:22"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 10.916 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:47:22"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 66.021 ms - 15467\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:47:22"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 30.976 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:47:22"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 30.709 ms - 15467\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:47:22"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 30.349 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:47:22"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[32m200\u001b[0m 5.474 ms - 26\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:47:24"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[36m304\u001b[0m 6.324 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:47:24"}
+{"level":"info","message":"\u001b[0mPOST /api/rules \u001b[32m201\u001b[0m 20.591 ms - 410\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:47:43"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[32m200\u001b[0m 9.368 ms - 364\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:47:43"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:48:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:48:00"}
+{"level":"info","message":"\u001b[0mPOST /api/rules \u001b[32m201\u001b[0m 16.785 ms - 438\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:48:15"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[32m200\u001b[0m 6.693 ms - 770\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:48:15"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:49:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:49:00"}
+{"level":"info","message":"\u001b[0mPOST /api/rules \u001b[32m201\u001b[0m 16.142 ms - 452\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:17"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[32m200\u001b[0m 6.439 ms - 1190\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:17"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.232 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:21"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.163 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:21"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 15.852 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:21"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 17.325 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:21"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 54.658 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:21"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 38.323 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:21"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 28.476 ms - 15467\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:21"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 22.947 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:21"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.217 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:26"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 27.862 ms - 15467\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:26"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[36m304\u001b[0m 13.525 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:30"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[36m304\u001b[0m 29.115 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:30"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.192 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:58"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.136 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:58"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 14.217 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:58"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 22.943 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:58"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 43.727 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:58"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 29.646 ms - 15467\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:58"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 32.897 ms - 15467\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:58"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 30.340 ms - 15467\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:49:58"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:50:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:50:00"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.328 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:03"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 29.260 ms - 15467\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:03"}
+{"level":"info","message":"\u001b[0mGET /api/logs?page=1&limit=20&isArchived=true \u001b[32m200\u001b[0m 42.995 ms - 15272\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:07"}
+{"level":"info","message":"\u001b[0mGET /api/logs?page=1&limit=20&isArchived=true \u001b[32m200\u001b[0m 31.430 ms - 15272\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:07"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[32m200\u001b[0m 5.262 ms - 1229\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:27"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[36m304\u001b[0m 7.804 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:27"}
+{"level":"info","message":"\u001b[0mGET /api/logs?page=1&limit=20&isArchived=true \u001b[36m304\u001b[0m 36.768 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:39"}
+{"level":"info","message":"\u001b[0mGET /api/logs?page=1&limit=20&isArchived=true \u001b[36m304\u001b[0m 20.693 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:39"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.194 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:48"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.183 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:48"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 10.644 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:48"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 8.092 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:48"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 29.384 ms - 15467\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:48"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 23.285 ms - 15467\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:48"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 27.370 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:48"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 28.046 ms - 15467\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:48"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[36m304\u001b[0m 5.773 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:50"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[36m304\u001b[0m 6.248 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:50"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.208 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:52"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.138 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:52"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 11.054 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:52"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 25.431 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:52"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 13.150 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:52"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 22.672 ms - 15467\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:52"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 23.624 ms - 15467\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:52"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 35.072 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:52"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.306 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:57"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 56.837 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:50:57"}
+{"level":"info","message":"⏰ Running scheduled auto-archival job...","service":"glitchguard-api","timestamp":"2025-11-01 17:51:00"}
+{"level":"info","message":"✅ Scheduled archival completed: 0 logs archived","service":"glitchguard-api","timestamp":"2025-11-01 17:51:00"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.215 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:02"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 26.680 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:02"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.188 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:07"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 52.523 ms - 101\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:07"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.183 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:12"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 25.391 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:12"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.358 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:17"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 37.480 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:17"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.222 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:22"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 25.081 ms - 3419\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:22"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.247 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:22"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.174 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:22"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[32m200\u001b[0m 8.686 ms - 222\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:22"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 7.737 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:22"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 27.231 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:22"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 18.257 ms - 3419\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:22"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 22.162 ms - 3419\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:22"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 16.628 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:22"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.174 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:27"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 22.897 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:27"}
+{"level":"info","message":"\u001b[0mGET /api/logs?page=1&limit=20&isArchived=true \u001b[32m200\u001b[0m 19.682 ms - 101\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:27"}
+{"level":"info","message":"\u001b[0mGET /api/logs?page=1&limit=20&isArchived=true \u001b[36m304\u001b[0m 22.467 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:27"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[32m200\u001b[0m 6.237 ms - 26\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:31"}
+{"level":"info","message":"\u001b[0mGET /api/rules \u001b[36m304\u001b[0m 8.211 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:31"}
+{"level":"info","message":"\u001b[0mGET /api/audit/stats?page=1&limit=20 \u001b[32m200\u001b[0m 9.130 ms - 296\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:32"}
+{"level":"info","message":"\u001b[0mGET /api/audit/stats?page=1&limit=20 \u001b[32m200\u001b[0m 5.799 ms - 296\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:32"}
+{"level":"info","message":"\u001b[0mGET /api/audit?page=1&limit=20 \u001b[32m200\u001b[0m 39.301 ms - 21758\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:32"}
+{"level":"info","message":"\u001b[0mGET /api/audit?page=1&limit=20 \u001b[32m200\u001b[0m 34.962 ms - 24049\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:32"}
+{"level":"info","message":"\u001b[0mGET /api/logs?page=1&limit=20&isArchived=true \u001b[36m304\u001b[0m 21.058 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:33"}
+{"level":"info","message":"\u001b[0mGET /api/logs?page=1&limit=20&isArchived=true \u001b[36m304\u001b[0m 16.947 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:33"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.226 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:34"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.184 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:34"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 17.671 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:34"}
+{"level":"info","message":"\u001b[0mGET /api/logs/stats \u001b[36m304\u001b[0m 10.997 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:34"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 41.117 ms - 3419\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:34"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 38.943 ms - 3419\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:34"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 19.793 ms - 3419\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:34"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 25.880 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:34"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.179 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:39"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[32m200\u001b[0m 23.930 ms - 3419\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:39"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.252 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:44"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 27.654 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:44"}
+{"level":"info","message":"\u001b[0mPOST /api/monitoring/stop \u001b[32m200\u001b[0m 0.659 ms - 237\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:47"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[32m200\u001b[0m 0.249 ms - 190\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:47"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 19.524 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:47"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[36m304\u001b[0m 0.187 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:49"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 18.777 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:49"}
+{"level":"info","message":"\u001b[0mPOST /api/monitoring/start \u001b[32m200\u001b[0m 0.691 ms - 236\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:50"}
+{"level":"info","message":"\u001b[0mGET /api/monitoring/status \u001b[32m200\u001b[0m 0.161 ms - 189\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:50"}
+{"level":"info","message":"\u001b[0mGET /api/logs?isArchived=false&page=1&limit=20 \u001b[36m304\u001b[0m 23.869 ms - -\u001b[0m","service":"glitchguard-api","timestamp":"2025-11-01 17:51:50"}

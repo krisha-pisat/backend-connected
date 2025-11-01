@@ -113,6 +113,7 @@ router.post('/', async (req, res) => {
       data: rule
     });
   } catch (error) {
+    console.error('Error creating retention rule:', error);
     res.status(500).json({
       success: false,
       message: 'Failed to create retention rule',
