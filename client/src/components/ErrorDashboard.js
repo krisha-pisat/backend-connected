@@ -82,7 +82,7 @@ function ErrorDashboard() {
         />
       )}
 
-      <MonitoringControls onStatusChange={() => loadLogs()} />
+      <MonitoringControls />
 
       <ErrorStats stats={stats} />
 

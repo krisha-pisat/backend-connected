@@ -34,6 +34,25 @@ function ArchiveDashboard() {
     }
   };
 
+  const handleUnarchive = async (logId) => {
+    if (!window.confirm('Are you sure you want to unarchive this error?')) {
+      return;
+    }
+    
+    try {
+      const result = await api.unarchiveLog(logId);
+      if (result.success) {
+        alert('Error unarchived successfully! It will appear in the main error log.');
+        loadArchivedLogs(); // Refresh the archived logs list
+      } else {
+        alert('Failed to unarchive error: ' + (result.message || 'Unknown error'));
+      }
+    } catch (error) {
+      console.error('Failed to unarchive log:', error);
+      alert('Failed to unarchive error. Please try again.');
+    }
+  };
+
   const handleFilterChange = (key, value) => {
     setFilters(prev => ({
       ...prev,
@@ -129,7 +148,7 @@ function ArchiveDashboard() {
           </p>
         </div>
       ) : (
-        <ErrorLogList logs={logs} />
+        <ErrorLogList logs={logs} onUnarchive={handleUnarchive} />
       )}
     </div>
   );

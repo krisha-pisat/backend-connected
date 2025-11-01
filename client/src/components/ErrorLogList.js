@@ -1,7 +1,7 @@
 import React from 'react';
 import './ErrorLogList.css';
 
-function ErrorLogList({ logs }) {
+function ErrorLogList({ logs, onUnarchive }) {
   if (logs.length === 0) {
     return (
       <div className="no-logs">
@@ -89,6 +89,15 @@ function ErrorLogList({ logs }) {
               )}
               {log.isArchived && (
                 <span className="archived-badge">📦 Archived</span>
+              )}
+              {log.isArchived && onUnarchive && (
+                <button 
+                  className="btn-unarchive" 
+                  onClick={() => onUnarchive(log._id)}
+                  title="Unarchive this error"
+                >
+                  ↻ Unarchive
+                </button>
               )}
             </div>
           </div>

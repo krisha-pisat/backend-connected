@@ -80,10 +80,13 @@ const archiveService = {
     const retentionMs = this.getRetentionDurationMs(rule);
     const cutoffDate = new Date(Date.now() - retentionMs);
 
-    // Build match conditions
+    // Build match conditions - check both unarchived errors and unarchived time
     const matchConditions = {
       isArchived: false,
-      createdAt: { $lt: cutoffDate }
+      $or: [
+        { createdAt: { $lt: cutoffDate }, archivedTime: { $exists: false } },
+        { archivedTime: { $lt: cutoffDate } }
+      ]
     };
 
     // Apply rule conditions
@@ -106,6 +109,9 @@ const archiveService = {
         $set: {
           isArchived: true,
           archivedAt: new Date()
+        },
+        $unset: {
+          archivedTime: ""
         }
       }
     );
@@ -138,7 +144,10 @@ const archiveService = {
 
       const matchConditions = {
         isArchived: false,
-        createdAt: { $lt: cutoffDate }
+        $or: [
+          { createdAt: { $lt: cutoffDate }, archivedTime: { $exists: false } },
+          { archivedTime: { $lt: cutoffDate } }
+        ]
       };
 
       if (severity) {
@@ -159,6 +168,9 @@ const archiveService = {
           $set: {
             isArchived: true,
             archivedAt: new Date()
+          },
+          $unset: {
+            archivedTime: ""
           }
         }
       );

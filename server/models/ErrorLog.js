@@ -52,6 +52,9 @@ const errorLogSchema = new mongoose.Schema({
   archivedAt: {
     type: Date
   },
+  archivedTime: {
+    type: Date
+  },
   emailSent: {
     type: Boolean,
     default: false

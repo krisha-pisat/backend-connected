@@ -183,6 +183,48 @@ router.post('/', async (req, res) => {
 });
 
 /**
+ * PATCH /api/logs/:id/unarchive
+ * Unarchive an error log
+ */
+router.patch('/:id/unarchive', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const errorLog = await ErrorLog.findById(id);
+    if (!errorLog) {
+      return res.status(404).json({
+        success: false,
+        message: 'Error log not found'
+      });
+    }
+
+    if (!errorLog.isArchived) {
+      return res.status(400).json({
+        success: false,
+        message: 'Error log is not archived'
+      });
+    }
+
+    // Unarchive the error and set archivedTime to now
+    errorLog.isArchived = false;
+    errorLog.archivedTime = new Date();
+    await errorLog.save();
+
+    res.json({
+      success: true,
+      message: 'Error log unarchived successfully',
+      data: errorLog
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Failed to unarchive error log',
+      error: error.message
+    });
+  }
+});
+
+/**
  * GET /api/logs/stats
  * Get aggregated statistics for dashboard
  */

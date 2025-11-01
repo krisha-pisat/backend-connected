@@ -15,6 +15,7 @@ function RetentionRulesDashboard() {
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [editingRule, setEditingRule] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [formData, setFormData] = useState({
@@ -55,6 +56,38 @@ function RetentionRulesDashboard() {
     return [...list, value];
   };
 
+  const handleEditRule = (rule) => {
+    setEditingRule(rule);
+    setShowForm(true);
+    setFormData({
+      name: rule.name,
+      description: rule.description || '',
+      selectedSeverity: rule.conditions?.severity || [],
+      servicesText: (rule.conditions?.service || []).join(', '),
+      selectedErrorTypes: rule.conditions?.errorType || [],
+      retentionDuration: rule.retentionDuration || rule.retentionDays || 30,
+      retentionUnit: rule.retentionUnit || 'days',
+      autoArchive: rule.autoArchive || false,
+      isActive: rule.isActive !== undefined ? rule.isActive : true
+    });
+  };
+
+  const resetForm = () => {
+    setFormData({
+      name: '',
+      description: '',
+      selectedSeverity: [],
+      servicesText: '',
+      selectedErrorTypes: [],
+      retentionDuration: 30,
+      retentionUnit: 'days',
+      autoArchive: true,
+      isActive: true
+    });
+    setEditingRule(null);
+    setShowForm(false);
+  };
+
   const handleCreateRule = async (event) => {
     event.preventDefault();
     setSubmitting(true);
@@ -92,28 +125,30 @@ function RetentionRulesDashboard() {
         return;
       }
 
-      const result = await api.createRule(payload);
-      if (!result.success) {
-        setErrorMessage(result.message || 'Failed to create rule');
+      let result;
+      if (editingRule) {
+        // Update existing rule
+        result = await api.updateRule(editingRule._id, payload);
+        if (result.success) {
+          setSuccessMessage('Retention rule updated successfully');
+        }
       } else {
-        setSuccessMessage('Retention rule created successfully');
-        setShowForm(false);
-        setFormData({
-          name: '',
-          description: '',
-          selectedSeverity: [],
-          servicesText: '',
-          selectedErrorTypes: [],
-          retentionDuration: 30,
-          retentionUnit: 'days',
-          autoArchive: true,
-          isActive: true
-        });
+        // Create new rule
+        result = await api.createRule(payload);
+        if (result.success) {
+          setSuccessMessage('Retention rule created successfully');
+        }
+      }
+
+      if (!result.success) {
+        setErrorMessage(result.message || 'Failed to save rule');
+      } else {
+        resetForm();
         loadRules();
       }
     } catch (error) {
-      console.error('Failed to create retention rule:', error);
-      setErrorMessage(error.message || 'Failed to create retention rule');
+      console.error('Failed to save retention rule:', error);
+      setErrorMessage(error.message || 'Failed to save retention rule');
     } finally {
       setSubmitting(false);
     }
@@ -181,7 +216,7 @@ function RetentionRulesDashboard() {
         <h1>🗂️ Retention Rules</h1>
         <div className="retention-actions">
           <button className="btn-secondary" onClick={loadRules}>Refresh</button>
-          <button className="btn-primary" onClick={() => setShowForm(!showForm)}>
+          <button className="btn-primary" onClick={showForm ? resetForm : () => setShowForm(true)}>
             {showForm ? 'Cancel' : '+ New Retention Rule'}
           </button>
         </div>
@@ -299,11 +334,19 @@ function RetentionRulesDashboard() {
 
           <div className="form-actions">
             <button
+              type="button"
+              className="btn-secondary"
+              onClick={resetForm}
+              disabled={submitting}
+            >
+              Cancel
+            </button>
+            <button
               type="submit"
               className="btn-primary"
               disabled={submitting}
             >
-              {submitting ? 'Creating...' : 'Create Rule'}
+              {submitting ? (editingRule ? 'Updating...' : 'Creating...') : (editingRule ? 'Update Rule' : 'Create Rule')}
             </button>
           </div>
         </form>
@@ -350,6 +393,12 @@ function RetentionRulesDashboard() {
                   </td>
                   <td>{rule.lastRunAt ? new Date(rule.lastRunAt).toLocaleString() : 'Never'}</td>
                   <td className="actions">
+                    <button
+                      className="btn-small btn-primary"
+                      onClick={() => handleEditRule(rule)}
+                    >
+                      Edit
+                    </button>
                     <button
                       className="btn-small"
                       onClick={() => handleToggleAutoArchive(rule)}

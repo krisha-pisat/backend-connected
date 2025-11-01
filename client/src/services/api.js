@@ -36,6 +36,16 @@ const api = {
     return response.json();
   },
 
+  async unarchiveLog(id) {
+    const response = await fetch(`${API_BASE_URL}/logs/${id}/unarchive`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    return response.json();
+  },
+
   // Retention Rules
   async getRules() {
     const response = await fetch(`${API_BASE_URL}/rules`);
