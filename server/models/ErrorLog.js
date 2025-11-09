@@ -61,6 +61,12 @@ const errorLogSchema = new mongoose.Schema({
   },
   emailSentAt: {
     type: Date
+  },
+  aiExplanation: {
+    type: String
+  },
+  aiExplanationGeneratedAt: {
+    type: Date
   }
 }, {
   timestamps: true

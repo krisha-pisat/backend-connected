@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ErrorLogList.css';
+import AIExplanationModal from './AIExplanationModal';
 
 function ErrorLogList({ logs, onUnarchive }) {
+  const [selectedError, setSelectedError] = useState(null);
+  const [showAIModal, setShowAIModal] = useState(false);
+
   if (logs.length === 0) {
     return (
       <div className="no-logs">
@@ -23,6 +27,16 @@ function ErrorLogList({ logs, onUnarchive }) {
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleString();
+  };
+
+  const handleAIExplanation = (log) => {
+    setSelectedError(log);
+    setShowAIModal(true);
+  };
+
+  const closeAIModal = () => {
+    setShowAIModal(false);
+    setSelectedError(null);
   };
 
   return (
@@ -78,31 +92,53 @@ function ErrorLogList({ logs, onUnarchive }) {
             )}
 
             <div className="log-footer">
-              {log.metadata?.externalAPI && (
-                <span className="external-api-badge">🌐 External API</span>
-              )}
-              {log.metadata?.capturedFrom === 'console' && (
-                <span className="console-badge">🖥️ Console Error</span>
-              )}
-              {log.emailSent && (
-                <span className="email-sent-badge">📧 Email Alert Sent</span>
-              )}
-              {log.isArchived && (
-                <span className="archived-badge">📦 Archived</span>
-              )}
-              {log.isArchived && onUnarchive && (
+              <div className="log-badges">
+                {log.metadata?.externalAPI && (
+                  <span className="external-api-badge">🌐 External API</span>
+                )}
+                {log.metadata?.capturedFrom === 'console' && (
+                  <span className="console-badge">🖥️ Console Error</span>
+                )}
+                {log.emailSent && (
+                  <span className="email-sent-badge">📧 Email Alert Sent</span>
+                )}
+                {log.isArchived && (
+                  <span className="archived-badge">📦 Archived</span>
+                )}
+                {log.aiExplanation && (
+                  <span className="ai-badge" title="AI explanation available">🤖 AI Explained</span>
+                )}
+              </div>
+              <div className="log-actions">
                 <button 
-                  className="btn-unarchive" 
-                  onClick={() => onUnarchive(log._id)}
-                  title="Unarchive this error"
+                  className="btn-ai-explanation" 
+                  onClick={() => handleAIExplanation(log)}
+                  title="Get AI explanation for this error"
                 >
-                  ↻ Unarchive
+                  🤖 AI Explanation
                 </button>
-              )}
+                {log.isArchived && onUnarchive && (
+                  <button 
+                    className="btn-unarchive" 
+                    onClick={() => onUnarchive(log._id)}
+                    title="Unarchive this error"
+                  >
+                    ↻ Unarchive
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         ))}
       </div>
+
+      {showAIModal && selectedError && (
+        <AIExplanationModal
+          errorLog={selectedError}
+          isOpen={showAIModal}
+          onClose={closeAIModal}
+        />
+      )}
     </div>
   );
 }

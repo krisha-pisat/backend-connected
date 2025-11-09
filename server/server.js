@@ -110,4 +110,9 @@ app.listen(PORT, () => {
   console.log(`[EAMS] Ready to receive error logs and audit logs from external services`);
   console.log(`[EAMS] Audit logging enabled for EAMS API calls`);
   console.log(`[EAMS] Auto-archival cron job: Running every minute`);
+  if (process.env.GROQ_API_KEY) {
+    console.log(`[EAMS] 🤖 AI Explanation service: Enabled (Groq API)`);
+  } else {
+    console.log(`[EAMS] ⚠️  AI Explanation service: Disabled (GROQ_API_KEY not set)`);
+  }
 });

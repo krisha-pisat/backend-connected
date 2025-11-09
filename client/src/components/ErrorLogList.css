@@ -151,11 +151,49 @@
 
 .log-footer {
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
   margin-top: 15px;
   padding-top: 15px;
   border-top: 1px solid #e9ecef;
+  flex-wrap: wrap;
+}
+
+.log-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
   align-items: center;
+}
+
+.log-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.btn-ai-explanation {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+}
+
+.btn-ai-explanation:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+}
+
+.btn-ai-explanation:active {
+  transform: translateY(0);
 }
 
 .btn-unarchive {
@@ -168,7 +206,6 @@
   font-size: 0.85rem;
   font-weight: 500;
   transition: background 0.2s;
-  margin-left: auto;
 }
 
 .btn-unarchive:hover {
@@ -206,6 +243,15 @@
 .archived-badge {
   background: #d1ecf1;
   color: #0c5460;
+}
+
+.ai-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 500;
 }
 
 .no-logs {

@@ -233,6 +233,33 @@ const api = {
     }
     return response.json();
   },
+
+  // AI Explanation
+  async generateAIExplanation(errorLogId) {
+    const response = await fetch(`${API_BASE_URL}/logs/${errorLogId}/ai-explanation`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || `HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  },
+
+  async getAIExplanation(errorLogId) {
+    const response = await fetch(`${API_BASE_URL}/logs/${errorLogId}/ai-explanation`);
+    if (!response.ok) {
+        if (response.status === 404) {
+          // No cached explanation, that's okay
+          return { success: false, cached: false };
+        }
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  },
 };
 
 export default api;

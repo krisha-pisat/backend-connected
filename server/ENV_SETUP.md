@@ -79,7 +79,15 @@ EMAIL_PASS=your-app-specific-password
   3. For Gmail: Use App Password (not regular password)
   4. Enable 2FA and generate app password
 
-### 6. Timezone Configuration (Optional)
+### 6. AI Explanation Service (Optional - For AI-Powered Error Analysis)
+
+**GROQ_API_KEY**
+- Required for: AI-powered error explanations
+- Get your key: https://console.groq.com/keys
+- Example: `GROQ_API_KEY=gsk_your_api_key_here`
+- Note: Without this key, AI explanation feature will be disabled but server will still work
+
+### 7. Timezone Configuration (Optional)
 
 **TIMEZONE**
 - Default: `America/New_York`
@@ -95,11 +103,12 @@ EMAIL_PASS=your-app-specific-password
 Minimum required configuration for testing:
 
 ```env
-PORT=5000
+PORT=5001
 NODE_ENV=development
-MONGODB_URI=mongodb://localhost:27017/glitchguard
+MONGODB_URI=mongodb://localhost:27017/error-management
 CLIENT_URL=http://localhost:3000
 ALERT_EMAIL=your-email@example.com
+GROQ_API_KEY=gsk_your_api_key_here
 ```
 
 Everything else can use defaults!

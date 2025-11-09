@@ -3,6 +3,16 @@ const router = express.Router();
 const ErrorLog = require('../models/ErrorLog');
 const emailService = require('../services/emailService');
 
+// Load AI explanation service only if available (optional feature)
+let aiExplanationService = null;
+try {
+  aiExplanationService = require('../services/aiExplanationService');
+  console.log('[EAMS] ✅ AI Explanation service loaded successfully');
+} catch (error) {
+  console.warn('[EAMS] ⚠️  AI Explanation service not available:', error.message);
+  console.error('[EAMS] Error loading AI service:', error);
+}
+
 /**
  * GET /api/logs
  * View error logs with filters for severity, service, and date
@@ -301,6 +311,123 @@ router.get('/stats', async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Failed to fetch statistics',
+      error: error.message
+    });
+  }
+});
+
+/**
+ * POST /api/logs/:id/ai-explanation
+ * Generate AI explanation for an error log
+ * NOTE: This route must come before any generic /:id route to avoid conflicts
+ */
+router.post('/:id/ai-explanation', async (req, res) => {
+  console.log('[AI] POST /api/logs/:id/ai-explanation called with id:', req.params.id);
+  console.log('[AI] aiExplanationService available:', !!aiExplanationService);
+  
+  try {
+    if (!aiExplanationService) {
+      console.error('[AI] Service not available');
+      return res.status(503).json({
+        success: false,
+        message: 'AI Explanation service is not available. Please check server configuration.'
+      });
+    }
+
+    const { id } = req.params;
+    console.log('[AI] Looking for error log with id:', id);
+
+    const errorLog = await ErrorLog.findById(id);
+    if (!errorLog) {
+      return res.status(404).json({
+        success: false,
+        message: 'Error log not found'
+      });
+    }
+
+    // Check if we already have a cached explanation (optional - can regenerate if needed)
+    // For now, we'll always generate fresh explanations
+
+    // Generate AI explanation
+    const result = await aiExplanationService.generateExplanation(errorLog);
+
+    if (result.success) {
+      // Optionally cache the explanation in the database
+      errorLog.aiExplanation = result.explanation;
+      errorLog.aiExplanationGeneratedAt = new Date();
+      await errorLog.save();
+
+      res.json({
+        success: true,
+        explanation: result.explanation,
+        model: result.model,
+        cached: false
+      });
+    } else {
+      res.status(500).json({
+        success: false,
+        message: 'Failed to generate AI explanation',
+        error: result.error
+      });
+    }
+  } catch (error) {
+    console.error('AI Explanation Error:', error);
+    console.error('Error Stack:', error.stack);
+    
+    // Provide more detailed error message
+    let errorMessage = error.message || 'Failed to generate AI explanation';
+    
+    if (error.message && error.message.includes('GROQ_API_KEY')) {
+      errorMessage = 'Groq API key is not configured. Please set GROQ_API_KEY in your .env file.';
+    } else if (error.message && error.message.includes('Invalid Groq API key')) {
+      errorMessage = 'Invalid Groq API key. Please check your GROQ_API_KEY in the .env file.';
+    }
+    
+    res.status(500).json({
+      success: false,
+      message: 'Failed to generate AI explanation',
+      error: errorMessage,
+      details: process.env.NODE_ENV === 'development' ? error.stack : undefined
+    });
+  }
+});
+
+/**
+ * GET /api/logs/:id/ai-explanation
+ * Get cached AI explanation for an error log (if available)
+ * NOTE: This route must come before any generic /:id route to avoid conflicts
+ */
+router.get('/:id/ai-explanation', async (req, res) => {
+  console.log('[AI] GET /api/logs/:id/ai-explanation called with id:', req.params.id);
+  
+  try {
+    const { id } = req.params;
+
+    const errorLog = await ErrorLog.findById(id);
+    if (!errorLog) {
+      return res.status(404).json({
+        success: false,
+        message: 'Error log not found'
+      });
+    }
+
+    if (errorLog.aiExplanation) {
+      res.json({
+        success: true,
+        explanation: errorLog.aiExplanation,
+        cached: true,
+        generatedAt: errorLog.aiExplanationGeneratedAt
+      });
+    } else {
+      res.status(404).json({
+        success: false,
+        message: 'No cached AI explanation found. Use POST to generate one.'
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Failed to fetch AI explanation',
       error: error.message
     });
   }
