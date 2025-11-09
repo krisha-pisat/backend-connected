@@ -68,9 +68,11 @@ function AuditLogList({ logs }) {
               <div className="detail-item">
                 <strong>IP:</strong> {log.ipAddress}
               </div>
-              <div className="detail-item">
-                <strong>Session:</strong> {log.sessionId.substring(0, 24)}...
-              </div>
+              {log.sessionId && (
+                <div className="detail-item">
+                  <strong>Session:</strong> {log.sessionId.substring(0, 24)}...
+                </div>
+              )}
               {log.userId && (
                 <div className="detail-item">
                   <strong>User:</strong> {log.userId}

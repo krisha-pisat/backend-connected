@@ -1,4 +1,7 @@
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+// src/services/api.js - EAMS Frontend (Running on Port 3000)
+
+// The default API base URL is set to Port 5001 (EAMS Backend)
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
 
 const api = {
   // Error Logs
@@ -12,6 +15,9 @@ const api = {
     
     const url = `${API_BASE_URL}/logs${params.toString() ? '?' + params.toString() : ''}`;
     const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
@@ -23,6 +29,9 @@ const api = {
       },
       body: JSON.stringify(errorData),
     });
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
@@ -33,6 +42,9 @@ const api = {
     
     const url = `${API_BASE_URL}/logs/stats${params.toString() ? '?' + params.toString() : ''}`;
     const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
@@ -43,12 +55,18 @@ const api = {
         'Content-Type': 'application/json',
       },
     });
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
   // Retention Rules
   async getRules() {
     const response = await fetch(`${API_BASE_URL}/rules`);
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
@@ -60,6 +78,9 @@ const api = {
       },
       body: JSON.stringify(ruleData),
     });
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
@@ -71,6 +92,9 @@ const api = {
       },
       body: JSON.stringify(ruleData),
     });
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
@@ -78,6 +102,9 @@ const api = {
     const response = await fetch(`${API_BASE_URL}/rules/${id}`, {
       method: 'DELETE',
     });
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
@@ -89,6 +116,9 @@ const api = {
       },
       body: JSON.stringify({ autoArchive }),
     });
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
@@ -103,6 +133,9 @@ const api = {
     
     const url = `${API_BASE_URL}/audit${params.toString() ? '?' + params.toString() : ''}`;
     const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
@@ -116,6 +149,9 @@ const api = {
     
     const url = `${API_BASE_URL}/audit/stats${params.toString() ? '?' + params.toString() : ''}`;
     const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
@@ -128,28 +164,43 @@ const api = {
       },
       body: JSON.stringify({ count, includeRepeated }),
     });
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
   // External API
   async getExternalServices() {
     const response = await fetch(`${API_BASE_URL}/external/services`);
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
   async getExternalErrors(count = 5) {
     const response = await fetch(`${API_BASE_URL}/external/errors?count=${count}`);
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
   async getServiceErrors(serviceName, count = 5) {
     const response = await fetch(`${API_BASE_URL}/external/${serviceName}/errors?count=${count}`);
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
   // Monitoring
   async getMonitoringStatus() {
     const response = await fetch(`${API_BASE_URL}/monitoring/status`);
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
@@ -157,6 +208,9 @@ const api = {
     const response = await fetch(`${API_BASE_URL}/monitoring/start`, {
       method: 'POST',
     });
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
@@ -164,6 +218,9 @@ const api = {
     const response = await fetch(`${API_BASE_URL}/monitoring/stop`, {
       method: 'POST',
     });
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
@@ -171,6 +228,9 @@ const api = {
     const response = await fetch(`${API_BASE_URL}/monitoring/trigger`, {
       method: 'POST',
     });
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 };
