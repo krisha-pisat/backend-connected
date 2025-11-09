@@ -97,7 +97,13 @@ router.post('/', async (req, res) => {
     const rule = new RetentionRule({
       name,
       description,
-      conditions: conditions || {},
+      conditions: {
+        severity: conditions?.severity || [],
+        service: conditions?.service || [],
+        errorType: conditions?.errorType || [],
+        message: conditions?.message || null,
+        messageMatchType: conditions?.messageMatchType || 'contains'
+      },
       retentionDuration: normalized.retentionDuration,
       retentionUnit: normalized.retentionUnit,
       retentionDays: normalized.retentionDays,
@@ -161,7 +167,16 @@ router.put('/:id', async (req, res) => {
     }
 
     if (description !== undefined) rule.description = description;
-    if (conditions !== undefined) rule.conditions = conditions;
+    if (conditions !== undefined) {
+      // Ensure conditions object has all fields
+      rule.conditions = {
+        severity: conditions.severity || rule.conditions?.severity || [],
+        service: conditions.service || rule.conditions?.service || [],
+        errorType: conditions.errorType || rule.conditions?.errorType || [],
+        message: conditions.message !== undefined ? conditions.message : (rule.conditions?.message || null),
+        messageMatchType: conditions.messageMatchType || rule.conditions?.messageMatchType || 'contains'
+      };
+    }
 
     if (retentionDuration !== undefined || retentionDays !== undefined) {
       const normalized = normalizeRetentionInput({ retentionDuration, retentionUnit, retentionDays });

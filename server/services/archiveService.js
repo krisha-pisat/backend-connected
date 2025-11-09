@@ -80,12 +80,13 @@ const archiveService = {
     const retentionMs = this.getRetentionDurationMs(rule);
     const cutoffDate = new Date(Date.now() - retentionMs);
 
-    // Build match conditions - check both unarchived errors and unarchived time
+    // Build match conditions - archive errors that are older than or equal to retention duration
+    // Use $lte to include errors that are exactly at the retention duration
     const matchConditions = {
       isArchived: false,
       $or: [
-        { createdAt: { $lt: cutoffDate }, archivedTime: { $exists: false } },
-        { archivedTime: { $lt: cutoffDate } }
+        { createdAt: { $lte: cutoffDate }, archivedTime: { $exists: false } },
+        { archivedTime: { $lte: cutoffDate } }
       ]
     };
 
@@ -100,6 +101,28 @@ const archiveService = {
 
     if (rule.conditions.errorType && rule.conditions.errorType.length > 0) {
       matchConditions.errorType = { $in: rule.conditions.errorType };
+    }
+
+    // Match by error message if specified
+    if (rule.conditions.message) {
+      const message = rule.conditions.message.trim();
+      const matchType = rule.conditions.messageMatchType || 'contains';
+      
+      if (matchType === 'exact') {
+        matchConditions.message = message;
+      } else if (matchType === 'contains') {
+        // Case-insensitive partial match
+        matchConditions.message = { $regex: message, $options: 'i' };
+      } else if (matchType === 'regex') {
+        // Full regex match
+        try {
+          matchConditions.message = { $regex: message, $options: 'i' };
+        } catch (err) {
+          console.error(`Invalid regex pattern in rule "${rule.name}":`, err.message);
+          // Skip this rule if regex is invalid
+          return 0;
+        }
+      }
     }
 
     // Archive matching logs
@@ -145,8 +168,8 @@ const archiveService = {
       const matchConditions = {
         isArchived: false,
         $or: [
-          { createdAt: { $lt: cutoffDate }, archivedTime: { $exists: false } },
-          { archivedTime: { $lt: cutoffDate } }
+          { createdAt: { $lte: cutoffDate }, archivedTime: { $exists: false } },
+          { archivedTime: { $lte: cutoffDate } }
         ]
       };
 

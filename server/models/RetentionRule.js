@@ -23,6 +23,15 @@ const retentionRuleSchema = new mongoose.Schema({
       type: [String],
       enum: ['browser', 'server', 'database'],
       default: []
+    },
+    message: {
+      type: String,
+      default: null
+    },
+    messageMatchType: {
+      type: String,
+      enum: ['exact', 'contains', 'regex'],
+      default: 'contains'
     }
   },
   retentionDays: {

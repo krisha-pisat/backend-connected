@@ -3,6 +3,73 @@ const router = express.Router();
 const AuditLog = require('../models/AuditLog');
 
 /**
+ * POST /api/audit
+ * Create audit log from external services (like Notes app)
+ */
+router.post('/', async (req, res) => {
+  try {
+    const {
+      method,
+      endpoint,
+      statusCode,
+      ipAddress,
+      sessionId,
+      userAgent,
+      userId,
+      requestBody,
+      responseTime,
+      projectId,
+      metadata
+    } = req.body;
+
+    // Validation - required fields
+    if (!method || !endpoint || !statusCode) {
+      return res.status(400).json({
+        success: false,
+        message: 'Missing required fields: method, endpoint, statusCode'
+      });
+    }
+
+    // Get tracking info from request (if not provided in body)
+    const trackingInfo = req.trackingInfo || {
+      ipAddress: req.ip || req.headers['x-forwarded-for']?.split(',')[0] || req.connection?.remoteAddress || 'unknown',
+      sessionId: req.sessionId || req.cookies?.sessionId || 'unknown',
+      userId: req.userId || userId || null
+    };
+
+    // Create audit log
+    const auditLogData = {
+      method: method.toUpperCase(),
+      endpoint,
+      statusCode: parseInt(statusCode),
+      ipAddress: ipAddress || trackingInfo.ipAddress || 'unknown',
+      sessionId: sessionId || trackingInfo.sessionId || 'unknown',
+      userAgent: userAgent || req.get('user-agent'),
+      userId: userId || trackingInfo.userId || null,
+      requestBody: requestBody || null,
+      responseTime: responseTime || 0,
+      projectId: projectId || trackingInfo.projectId || 'default',
+      metadata: metadata || {}
+    };
+
+    const auditLog = new AuditLog(auditLogData);
+    await auditLog.save();
+
+    res.status(201).json({
+      success: true,
+      message: 'Audit log created successfully',
+      data: auditLog
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Failed to create audit log',
+      error: error.message
+    });
+  }
+});
+
+/**
  * GET /api/audit
  * Get audit logs with filters
  */

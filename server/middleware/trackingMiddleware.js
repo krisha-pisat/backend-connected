@@ -91,6 +91,26 @@ class TrackingMiddleware {
         return next();
       }
 
+      // Skip audit logging for stats/status endpoints (frequently polled by frontend)
+      // These create too much noise in audit logs
+      const statsEndpoints = [
+        '/api/audit/stats',
+        '/api/logs/stats',
+        '/api/monitoring/status',
+        '/api/monitoring/stats',
+        '/api/rules/stats'
+      ];
+      if (statsEndpoints.some(endpoint => req.path.startsWith(endpoint))) {
+        return next();
+      }
+
+      // For EAMS internal API calls, only log meaningful actions (POST, PUT, DELETE, PATCH)
+      // Skip all GET requests to EAMS APIs to reduce noise from dashboard refreshes
+      // GET requests are just fetching data, not user actions
+      if (req.method === 'GET') {
+        return next(); // Skip all GET requests in EAMS (they're just data fetching)
+      }
+
       const startTime = Date.now();
       const self = this;
       

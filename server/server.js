@@ -52,6 +52,10 @@ app.use(cors({
 // 3. Body Parser Middleware
 app.use(express.json());
 
+// 3.5. Enable Tracking Middleware for Audit Logging (optional - logs EAMS API calls)
+const { trackingMiddleware } = require('./middleware/trackingMiddleware');
+app.use(trackingMiddleware.getMiddleware());
+
 // 4. Routes
 app.use('/api/logs', logRoutes);
 app.use('/api/rules', ruleRoutes);
@@ -70,5 +74,40 @@ app.use((req, res, next) => {
 // 6. Global Error Handler (assuming this is present)
 // ... app.use(async (err, req, res, next) => { ... } )
 
-// 7. Start Server
-app.listen(PORT, () => console.log(`EAMS Server listening on port ${PORT}`));
+// 7. Set up Auto-Archival Cron Job
+const archiveService = require('./services/archiveService');
+const cron = require('node-cron');
+
+// Archive cron schedule - runs every minute by default (configurable via env)
+// Format: minute hour day month weekday
+// '*/1 * * * *' = every minute
+// '0 */1 * * *' = every hour
+// '0 0 * * *' = every day at midnight
+const ARCHIVE_CRON_SCHEDULE = process.env.ARCHIVE_CRON_SCHEDULE || '*/1 * * * *'; // Every minute
+
+// Start the cron job for auto-archival
+cron.schedule(ARCHIVE_CRON_SCHEDULE, async () => {
+  try {
+    console.log('⏰ Running scheduled auto-archival job...');
+    const result = await archiveService.archiveLogsByRules();
+    if (result.success) {
+      console.log(`✅ Scheduled archival completed: ${result.logsArchived} logs archived`);
+    } else {
+      console.error(`❌ Scheduled archival failed: ${result.error}`);
+    }
+  } catch (error) {
+    console.error('❌ Error in scheduled archival job:', error);
+  }
+});
+
+console.log(`📅 Auto-archival cron job scheduled: ${ARCHIVE_CRON_SCHEDULE}`);
+
+// 8. Start Server
+app.listen(PORT, () => {
+  console.log(`EAMS Server listening on port ${PORT}`);
+  console.log(`[EAMS] Error logs endpoint: http://localhost:${PORT}/api/logs`);
+  console.log(`[EAMS] Audit logs endpoint: http://localhost:${PORT}/api/audit`);
+  console.log(`[EAMS] Ready to receive error logs and audit logs from external services`);
+  console.log(`[EAMS] Audit logging enabled for EAMS API calls`);
+  console.log(`[EAMS] Auto-archival cron job: Running every minute`);
+});

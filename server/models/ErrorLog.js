@@ -72,6 +72,7 @@ errorLogSchema.index({ severity: 1, createdAt: -1 });
 errorLogSchema.index({ service: 1, createdAt: -1 });
 errorLogSchema.index({ errorType: 1, createdAt: -1 });
 errorLogSchema.index({ isArchived: 1, createdAt: -1 });
+errorLogSchema.index({ message: 1 }); // Index for message matching in retention rules
 
 // Virtual for checking if error is repeated (same message in last hour)
 errorLogSchema.methods.isRepeated = async function() {

@@ -24,6 +24,8 @@ function RetentionRulesDashboard() {
     selectedSeverity: [],
     servicesText: '',
     selectedErrorTypes: [],
+    errorMessage: '',
+    messageMatchType: 'contains',
     retentionDuration: 30,
     retentionUnit: 'days',
     autoArchive: true,
@@ -65,6 +67,8 @@ function RetentionRulesDashboard() {
       selectedSeverity: rule.conditions?.severity || [],
       servicesText: (rule.conditions?.service || []).join(', '),
       selectedErrorTypes: rule.conditions?.errorType || [],
+      errorMessage: rule.conditions?.message || '',
+      messageMatchType: rule.conditions?.messageMatchType || 'contains',
       retentionDuration: rule.retentionDuration || rule.retentionDays || 30,
       retentionUnit: rule.retentionUnit || 'days',
       autoArchive: rule.autoArchive || false,
@@ -79,6 +83,8 @@ function RetentionRulesDashboard() {
       selectedSeverity: [],
       servicesText: '',
       selectedErrorTypes: [],
+      errorMessage: '',
+      messageMatchType: 'contains',
       retentionDuration: 30,
       retentionUnit: 'days',
       autoArchive: true,
@@ -106,7 +112,9 @@ function RetentionRulesDashboard() {
         conditions: {
           severity: formData.selectedSeverity,
           service: services,
-          errorType: formData.selectedErrorTypes
+          errorType: formData.selectedErrorTypes,
+          message: formData.errorMessage.trim() || null,
+          messageMatchType: formData.messageMatchType
         },
         retentionDuration: Number(formData.retentionDuration),
         retentionUnit: formData.retentionUnit,
@@ -202,11 +210,15 @@ function RetentionRulesDashboard() {
   };
 
   const formatConditions = (rule) => {
-    const { severity = [], service = [], errorType = [] } = rule.conditions || {};
+    const { severity = [], service = [], errorType = [], message = null } = rule.conditions || {};
     const parts = [];
     if (severity.length) parts.push(`Severity: ${severity.join(', ')}`);
     if (service.length) parts.push(`Service: ${service.join(', ')}`);
     if (errorType.length) parts.push(`Type: ${errorType.join(', ')}`);
+    if (message) {
+      const matchType = rule.conditions?.messageMatchType || 'contains';
+      parts.push(`Message: "${message}" (${matchType})`);
+    }
     return parts.length ? parts.join(' | ') : 'All errors';
   };
 
@@ -319,6 +331,38 @@ function RetentionRulesDashboard() {
               onChange={(e) => setFormData({ ...formData, servicesText: e.target.value })}
               placeholder="e.g., payment-service, auth-service"
             />
+          </div>
+
+          <div className="form-row">
+            <div className="form-group">
+              <label>Error Message (optional)</label>
+              <input
+                type="text"
+                value={formData.errorMessage}
+                onChange={(e) => setFormData({ ...formData, errorMessage: e.target.value })}
+                placeholder="e.g., Invalid Note ID format"
+              />
+              <small>Match errors by their message. Leave empty to match all errors.</small>
+            </div>
+
+            {formData.errorMessage && (
+              <div className="form-group">
+                <label>Message Match Type</label>
+                <select
+                  value={formData.messageMatchType}
+                  onChange={(e) => setFormData({ ...formData, messageMatchType: e.target.value })}
+                >
+                  <option value="contains">Contains (partial match)</option>
+                  <option value="exact">Exact Match</option>
+                  <option value="regex">Regex Pattern</option>
+                </select>
+                <small>
+                  {formData.messageMatchType === 'contains' && 'Matches if error message contains this text'}
+                  {formData.messageMatchType === 'exact' && 'Matches if error message is exactly this text'}
+                  {formData.messageMatchType === 'regex' && 'Matches using regex pattern'}
+                </small>
+              </div>
+            )}
           </div>
 
           <div className="form-row">
